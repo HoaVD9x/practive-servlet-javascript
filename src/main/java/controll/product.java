@@ -44,15 +44,15 @@ public class product extends HttpServlet {
             criteriaQuery.select(root);
             List<Product> products = session.createQuery(criteriaQuery).getResultList();
              for (Product product:products){
-                 out.println("" +
-                         "<div class=\"card\" >\n" +
-                         "    <img class=\"card-img-top\" src=\""+product.getProductImageLink()+"\" alt=\"Card image\" style=\"width:100%\">\n" +
-                         "    <div class=\"card-body\">\n" +
-                         "      <h4 class=\"card-title\">"+product.getProductName()+"</h4>\n" +
-                         "      <p class=\"card-text\">"+product.getProductDescription()+"</p>\n" +
-                         "      <a href=\"#\" class=\"btn btn-primary\">See Profile</a>\n" +
-                         "    </div>\n" +
-                         "  </div>");
+                 out.println("<div class=\"card m-3\" >\n" +
+                         "                <img class=\"card-img-top\" src=\""+product.getProductImageLink()+"\" alt=\"Card image\" >\n" +
+                         "                <div class=\"card-body\">\n" +
+                         "                  <h4 class=\"card-title\">"+product.getProductName()+"</h4>\n" +
+                         "                  <p class=\"card-text\">"+product.getProductDescription()+"</p>\n" +
+                         "                  <p class=\"card-price\"> "+product.getBuyPrice()+"</p>\n" +
+                         "                  <a href=\"#\" class=\"btn btn-primary\"> See details</a>\n" +
+                         "                </div>\n" +
+                         "            </div>");
              }
         } catch (Exception e) {
             e.printStackTrace();

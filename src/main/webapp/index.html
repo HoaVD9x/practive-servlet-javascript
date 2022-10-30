@@ -10,9 +10,10 @@
 </head>
 <body>
 
-    <div class="container mt-3">
-        <div class="d-flex flex-column col-6" id="content" style="">
-            <button onclick="showProduct()"> show product</button>
+    <div class="container ">
+        <button onclick="showProduct()"> show product</button>
+        <div class="row row-cols-4 justify-content-around" id="content" style="">
+
             
         </div>
         
@@ -20,7 +21,7 @@
         <script>
           function showProduct() {
               $.ajax({
-                  url:"/home/product",
+                  url:"/practive/product",
                   type:"GET",
                   success: function(data) {
                       var row = document.getElementById("content");
